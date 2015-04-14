@@ -1,0 +1,8 @@
+---
+- name: Unicorn | Install Unicorn Globally
+  gem: name=unicorn state=present user_install=no
+  sudo: yes
+
+- name: Unicorn | Copy init template to init.d dir
+  template: src=unicorn_upstart.j2 dest=/etc/init/{{ app.process_name }}.conf owner=root group=root force=yes
+  sudo: yes

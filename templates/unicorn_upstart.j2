@@ -1,0 +1,23 @@
+#!upstart
+description "Upstart Script for a Rails process"
+
+start on startup
+stop on shutdown
+
+respawn
+
+setuid deploy
+setgid deploy
+
+chdir {{ app_path }}/current/
+
+script
+  bundle exec ./bin/unicorn -D -c ./config/unicorn.rb --env {{ server_env }} --no-default-middleware
+  flock -x 0 < {{ app_path }}/current/tmp/pids/unicorn.pid.lock
+end script
+
+pre-stop script
+exec /bin/bash <<EOT
+  exec kill -QUIT `cat {{ app_path }}/shared/tmp/pids/unicorn.pid`
+EOT
+end script
