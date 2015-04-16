@@ -1,7 +1,7 @@
 # Ansible role to install Unicorn
 
-[![Build Status](https://img.shields.io/circleci/project/crushlovely/ansible-unicorn-upstart.svg?style=flat)](https://img.shields.io/circleci/project/crushlovely/ansible-unicorn-upstart)
-[![Current Version](http://img.shields.io/github/release/crushlovely/ansible-unicorn-upstart.svg?style=flat)](https://galaxy.ansible.com/list#/roles/1180)
+[![Build Status](https://circleci.com/gh/crushlovely/ansible-unicorn-upstart.svg?style=shield)](https://github.com/crushlovely/ansible-unicorn-upstart)
+[![Current Version](http://img.shields.io/github/release/crushlovely/ansible-unicorn-upstart.svg?style=flat)](https://galaxy.ansible.com/list#/users/3804)
 
 This Ansible role installs/updates and configures Unicorn.  It also copies a working Upstart script.
 
